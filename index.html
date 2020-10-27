@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Error message location prototypes</title>
+    <title>Inline error message placement prototypes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/index.css" />
     <style>
@@ -21,11 +21,11 @@
   <body class="js-toc-content">
     <main>
       <div class="example--wrapper ds-base">
-        <h1>Some examples of before and after</h1>
+        <h1>Inline error message placement prototypes</h1>
         <div class="js-toc"></div>
         <p>
-          Some prototypes for error message placement for the CMS Design System
-          and the Healthcare,gov Child Design System.
+          These prototypes will be <a href="https://github.com/CMSgov/design-system/issues/752">used for the CMS Design System
+          and the Healthcare,gov Child Design System</a>.
         </p>
         <p><strong>Navigation</strong></p>
         <ul>
@@ -34,8 +34,7 @@
         </ul>
         <h2 id="existing">Existing</h2>
         <p>
-          These examples explore existing error message placement for the CMS
-          Design System and the Healthcare,gov Child Design System.
+          These examples show how error messages appear in the existing CMS Design System. They'll be used for testing and comparison.
         </p>
         <h3>Choice (existing)</h3>
         <fieldset class="ds-c-fieldset">
@@ -486,6 +485,7 @@
         <h2 id="new">New options</h2>
         <p>These examples show error message placement below the control for the CMS Design System and the Healthcare,gov Child Design System. The different options explore various ways to make the placement work for assistive technology.</p>
         <h3 id="option1">Option 1</h3>
+        <p>This option keeps puts the input inside the label element with both the help text and error text.</p>
         <div>
           <label class="ds-c-label" for="input-error-2">
             <span>Error field</span>
@@ -502,9 +502,10 @@
           </label>
         </div>
         <h3 id="option2">Option 2</h3>
+        <p>This moves the error message outside of the label, and below the control. It uses <code>aria-describedby</code> on the input to associate the error message to the input.</p>
         <details>
           <summary>Testing notes</summary>
-          <p><strong>VoiceOver + Safari</strong>: If a role="alert" is on an element that has text also used as text for aria-describedby, VoiceOver will not announce the aria-describedby text.</p>
+          <p><strong>VoiceOver + Safari</strong>: If a <code>role="alert"</code> is on an element that has text also used as text for <code>aria-describedby</code>, VoiceOver will not announce the aria-describedby text. <a ref="https://a11ysupport.io/tests/tech__aria__aria_describedby_with_role_alert">Related independent testing</a>.</p>
         </details>
         <div>
           <label class="ds-c-label" for="input-error-3">
@@ -520,6 +521,31 @@
           />
           <span
             id="error-msg-3"
+            class="ds-c-field__hint ds-u-color--error"
+            role="alert"
+          >
+            Example error message
+          </span>
+        </div>
+        <h3 id="option3">Option 3</h3>
+        <p>This moves the error message outside of the label, and below the control. It uses <code>aria-describedby</code> on the label element to associate the error message to the label.</p>
+        <details>
+            <summary>Testing notes</summary>
+            <p><strong>Not an interactive element</strong>: This technique won't work because the item we use <code>aria-describedby</code> on <a ref="https://a11ysupport.io/tests/tech__aria__aria_describedby_with_role_alert">isn't an interactive element</a>.</p>
+          </details>
+        <div>
+          <label class="ds-c-label" for="input-error-4" aria-describedby="error-msg-4">
+            <span>Error field</span>
+            <span class="ds-c-field__hint">Helpful hint text</span>
+          </label>
+          <input
+            class="ds-c-field ds-c-field--error"
+            id="input-error-4"
+            name="error"
+            type="text"
+          />
+          <span
+            id="error-msg-4"
             class="ds-c-field__hint ds-u-color--error"
             role="alert"
           >
