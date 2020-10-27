@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Error message location prototypes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      main > .example--wrapper {
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 16px;
+      }
+      .ds-base--inverse {
+        margin-top: 16px;
+        padding: 0 16px 16px;
+      }
+    </style>
+  </head>
+
+  <body class="js-toc-content">
+    <main>
+      <div class="example--wrapper ds-base">
+        <h1>Some examples of before and after</h1>
+        <div class="js-toc"></div>
+        <p>
+          Some prototypes for error message placement for the CMS Design System
+          and the Healthcare,gov Child Design System.
+        </p>
+        <p><strong>Navigation</strong></p>
+        <ul>
+          <li><a href="#existing">Existing</a></li>
+          <li><a href="#new">New options</a></li>
+        </ul>
+        <h2 id="existing">Existing</h2>
+        <p>
+          These examples explore existing error message placement for the CMS
+          Design System and the Healthcare,gov Child Design System.
+        </p>
+        <h3>Choice (existing)</h3>
+        <fieldset class="ds-c-fieldset">
+          <legend class="ds-c-label"><span>Checkbox example</span></legend>
+          <span class="ds-c-field__hint">Helpful hint text</span>
+          <input
+            class="ds-c-choice"
+            id="checkbox-1"
+            type="checkbox"
+            name="checkbox-choices"
+            value="checkbox-1"
+            checked
+          />
+          <label for="checkbox-1">
+            <span>Choice 1</span>
+          </label>
+          <input
+            class="ds-c-choice"
+            id="checkbox-2"
+            type="checkbox"
+            name="checkbox-choices"
+            value="checkbox-2"
+          />
+          <label for="checkbox-2">
+            <span>Choice 2</span>
+          </label>
+          <input
+            class="ds-c-choice"
+            id="checkbox-3"
+            type="checkbox"
+            name="checkbox-choices"
+            value="checkbox-3"
+            disabled
+          />
+          <label for="checkbox-3">
+            <span>Disabled choice 3</span>
+          </label>
+        </fieldset>
+        <fieldset class="ds-c-fieldset">
+          <legend class="ds-c-label"><span>Radio example</span></legend>
+          <span class="ds-c-field__hint ds-u-color--error" role="alert">
+            Example error message
+          </span>
+          <input
+            class="ds-c-choice ds-c-choice--error"
+            id="radio-1"
+            type="radio"
+            name="radio-choices"
+            value="radio-1"
+          />
+          <label for="radio-1">
+            <span>Choice 1</span>
+            <span class="ds-c-field__hint">Choice hint text</span>
+          </label>
+          <input
+            class="ds-c-choice ds-c-choice--error"
+            id="radio-2"
+            type="radio"
+            name="radio-choices"
+            value="radio-2"
+          />
+          <label for="radio-2"><span>Choice 2</span></label>
+        </fieldset>
+        <fieldset class="ds-c-fieldset">
+          <legend class="ds-c-label"><span>Small size example</span></legend>
+          <input
+            class="ds-c-choice ds-c-choice--small"
+            id="small-1"
+            type="radio"
+            name="size-variants"
+            value="normal"
+            checked
+          />
+          <label for="small-1">
+            <span>Choice 1</span>
+          </label>
+          <input
+            class="ds-c-choice ds-c-choice--small"
+            id="small-2"
+            type="radio"
+            name="size-variants"
+            value="small"
+          />
+          <label for="small-2">
+            <span>Choice 2</span>
+          </label>
+        </fieldset>
+        <div class="example--wrapper ds-base--inverse">
+          <fieldset class="ds-c-fieldset">
+            <legend class="ds-c-label"><span>Inverse example</span></legend>
+            <span class="ds-c-field__hint ds-c-field__hint--inverse"
+              >Helpful hint text</span
+            >
+            <span class="ds-c-field__hint ds-u-color--error-light"
+              >Example error message</span
+            >
+            <input
+              class="ds-c-choice ds-c-choice--inverse ds-c-choice--error"
+              id="inverse-1"
+              type="checkbox"
+              name="inverse-choices"
+              value="inverse-1"
+            />
+            <label for="inverse-1">
+              <span>Choice 1</span>
+              <span class="ds-c-field__hint ds-c-field__hint--inverse"
+                >Choice hint text</span
+              >
+            </label>
+            <input
+              class="ds-c-choice ds-c-choice--inverse ds-c-choice--error"
+              id="inverse-2"
+              type="checkbox"
+              name="inverse-choices"
+              value="inverse-2"
+            />
+            <label for="inverse-2">
+              <span>Choice 2</span>
+            </label>
+            <input
+              class="ds-c-choice ds-c-choice--inverse ds-c-choice--error"
+              id="inverse-3"
+              type="checkbox"
+              name="inverse-choices"
+              value="inverse-3"
+              disabled
+            />
+            <label for="inverse-3">
+              <span>Disabled choice 3</span>
+            </label>
+          </fieldset>
+        </div>
+        <h3>Date field (existing)</h3>
+        <fieldset class="ds-c-fieldset">
+          <legend class="ds-c-label" id="dob-datefield-1">
+            <span class="ds-u-font-weight--bold">Date of birth</span>
+            <span class="ds-c-field__hint">For example: 4 / 28 / 1986</span>
+            <span class="ds-c-field__hint ds-u-color--error" role="alert">
+              Please enter a year in the past
+            </span>
+          </legend>
+          <div class="ds-l-form-row ds-u-align-items--end">
+            <div class="ds-l-col--auto">
+              <label
+                class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                for="month-1"
+                ><span>Month</span></label
+              >
+              <input
+                class="ds-c-field ds-c-field--month"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="month-1"
+                name="birthdate[month]"
+                autocomplete="bday-month"
+                aria-describedby="dob-datefield-1"
+                value="10"
+              />
+            </div>
+            <span class="ds-c-datefield__separator">/</span>
+            <div class="ds-l-col--auto">
+              <label
+                class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                for="day-1"
+                ><span>Day</span></label
+              >
+              <input
+                class="ds-c-field ds-c-field--day"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="day-1"
+                name="birthdate[day]"
+                autocomplete="bday-day"
+                aria-describedby="dob-datefield-1"
+                value="31"
+              />
+            </div>
+            <span class="ds-c-datefield__separator">/</span>
+            <div class="ds-l-col--auto">
+              <label
+                class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                for="year-1"
+                ><span>Year</span></label
+              >
+              <input
+                class="ds-c-field ds-c-field--error ds-c-field--year"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="year-1"
+                name="birthdate[year]"
+                autocomplete="bday-year"
+                aria-describedby="dob-datefield-1"
+                value="2050"
+              />
+            </div>
+          </div>
+        </fieldset>
+        <div class="example--wrapper ds-base--inverse">
+          <fieldset class="ds-c-fieldset">
+            <legend class="ds-c-label" id="dob-datefield-2">
+              <span class="ds-u-font-weight--bold">Inverse example</span>
+              <span class="ds-c-field__hint ds-c-field__hint--inverse"
+                >For example: 4 / 28 / 1986</span
+              >
+              <span
+                class="ds-c-field__hint ds-u-color--error-light"
+                role="alert"
+              >
+                Please enter a year in the past
+              </span>
+            </legend>
+            <div class="ds-l-form-row ds-u-align-items--end">
+              <div class="ds-l-col--auto">
+                <label
+                  class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                  for="month-2"
+                  ><span>Month</span></label
+                >
+                <input
+                  class="ds-c-field ds-c-field--month"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  id="month-2"
+                  name="birthdate[month]"
+                  autocomplete="bday-month"
+                  aria-describedby="dob-datefield-2"
+                  value="10"
+                />
+              </div>
+              <span class="ds-c-datefield__separator">/</span>
+              <div class="ds-l-col--auto">
+                <label
+                  class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                  for="day-2"
+                  ><span>Day</span></label
+                >
+                <input
+                  class="ds-c-field ds-c-field--day"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  id="day-2"
+                  name="birthdate[day]"
+                  autocomplete="bday-day"
+                  aria-describedby="dob-datefield-2"
+                  value="31"
+                />
+              </div>
+              <span class="ds-c-datefield__separator">/</span>
+              <div class="ds-l-col--auto">
+                <label
+                  class="ds-c-label ds-u-font-weight--normal ds-u-margin-top--1"
+                  for="year-2"
+                  ><span>Year</span></label
+                >
+                <input
+                  class="ds-c-field ds-c-field--error ds-c-field--year"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  id="year-2"
+                  name="birthdate[year]"
+                  autocomplete="bday-year"
+                  aria-describedby="dob-datefield-2"
+                  value="2050"
+                />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <h3>Dropdowns (existing)</h3>
+        <div>
+          <label class="ds-c-label ds-u-margin-top--0" for="options-1"
+            ><span>Dropdown example</span></label
+          >
+          <select class="ds-c-field" name="options" id="options-1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6">Option 6</option>
+            <option value="7">Option 7</option>
+          </select>
+        </div>
+        <div class="example--wrapper ds-base--inverse">
+          <div>
+            <label class="ds-c-label ds-u-margin-top--0" for="options-inverse-1">
+              <span>Inverse example</span>
+              <span class="ds-c-field__hint ds-c-field__hint--inverse">
+                Helpful hint text
+              </span>
+              <span
+                class="ds-c-field__hint ds-u-color--error-light"
+                role="alert"
+              >
+                Example error message
+              </span>
+            </label>
+            <select
+              class="ds-c-field ds-c-field--error ds-c-field--inverse"
+              name="options-inverse"
+              id="options-inverse-1"
+            >
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+              <option value="6">Option 6</option>
+              <option value="7">Option 7</option>
+            </select>
+          </div>
+        </div>
+        <h3>Text field (existing)</h3>
+        <div>
+          <label class="ds-c-label ds-u-margin-top--0" for="input-singleline-1">
+            <span>Single line field</span>
+          </label>
+          <input
+            class="ds-c-field"
+            id="input-singleline-1"
+            name="singleline"
+            value="Example text"
+            type="text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-number-1">
+            <span> Number field</span>
+          </label>
+          <input
+            class="ds-c-field"
+            id="input-number-1"
+            name="number"
+            value="123"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-password-1">
+            <span>Password field</span>
+          </label>
+          <input
+            class="ds-c-field ds-c-field--inverse"
+            id="input-password-1"
+            name="password"
+            type="password"
+            value="Example text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-small-1"
+            ><span>Small size field</span></label
+          >
+          <input
+            class="ds-c-field ds-c-field--small"
+            id="input-small-1"
+            name="tinysize"
+            type="text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-medium-1"
+            ><span>Medium size field</span></label
+          >
+          <input
+            class="ds-c-field ds-c-field--medium"
+            id="input-medium-1"
+            name="mediumsize"
+            type="text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-multiline-1">
+            <span>Multiline field</span>
+          </label>
+          <textarea
+            class="ds-c-field"
+            id="input-multiline-1"
+            name="multiline"
+            rows="4"
+          ></textarea>
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-error-1">
+            <span>Error field</span>
+            <span class="ds-c-field__hint">Helpful hint text</span>
+            <span class="ds-c-field__hint ds-u-color--error" role="alert">
+              Example error message
+            </span>
+          </label>
+          <input
+            class="ds-c-field ds-c-field--error"
+            id="input-error-1"
+            name="error"
+            type="text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-success-1"
+            ><span>Success field</span></label
+          >
+          <input
+            class="ds-c-field ds-c-field--success"
+            id="input-success-1"
+            name="success"
+            type="text"
+          />
+        </div>
+        <div>
+          <label class="ds-c-label" for="input-disabled-1">
+            <span>Disabled field</span>
+          </label>
+          <input
+            class="ds-c-field ds-c-field--inverse"
+            id="input-disabled-1"
+            name="disabled"
+            type="text"
+            disabled
+          />
+        </div>
+        <div class="example--wrapper ds-base--inverse">
+          <div>
+            <label class="ds-c-label ds-u-margin-top--0" for="input-inverse-1">
+              <span>Inverse field</span>
+              <span class="ds-c-field__hint ds-c-field__hint--inverse"
+                >Helpful hint text</span
+              >
+              <span class="ds-c-field__hint ds-u-color--error-light"
+                >Example error message</span
+              >
+            </label>
+            <input
+              class="ds-c-field ds-c-field--inverse ds-c-field--error"
+              id="input-inverse-1"
+              name="inverse"
+              type="text"
+            />
+          </div>
+        </div>
+        <h2 id="new">New options</h2>
+        <p>These examples show error message placement below the control for the CMS Design System and the Healthcare,gov Child Design System. The different options explore various ways to make the placement work for assistive technology.</p>
+        <h3 id="option1">Option 1</h3>
+        <div>
+          <label class="ds-c-label" for="input-error-2">
+            <span>Error field</span>
+            <span class="ds-c-field__hint">Helpful hint text</span>
+            <input
+              class="ds-c-field ds-c-field--error"
+              id="input-error-2"
+              name="error"
+              type="text"
+            />
+            <span class="ds-c-field__hint ds-u-color--error" role="alert">
+              Example error message
+            </span>
+          </label>
+        </div>
+        <h3 id="option2">Option 2</h3>
+        <details>
+          <summary>Testing notes</summary>
+          <p><strong>VoiceOver + Safari</strong>: If a role="alert" is on an element that has text also used as text for aria-describedby, VoiceOver will not announce the aria-describedby text.</p>
+        </details>
+        <div>
+          <label class="ds-c-label" for="input-error-3">
+            <span>Error field</span>
+            <span class="ds-c-field__hint">Helpful hint text</span>
+          </label>
+          <input
+            class="ds-c-field ds-c-field--error"
+            id="input-error-3"
+            name="error"
+            type="text"
+            aria-describedby="error-msg-3"
+          />
+          <span
+            id="error-msg-3"
+            class="ds-c-field__hint ds-u-color--error"
+            role="alert"
+          >
+            Example error message
+          </span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
