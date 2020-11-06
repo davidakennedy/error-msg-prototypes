@@ -1,6 +1,7 @@
 (function () {
   var form = document.getElementById("focus-shift");
   var input = document.getElementById("input-error-5");
+  var focusButton = document.getElementById("focus-button");
   var newNode = document.createElement("div");
   newNode.setAttribute("id", "error-msg-5");
   newNode.setAttribute("class", "ds-c-field__hint");
@@ -12,7 +13,7 @@
 
     if (input.value.trim() == "") {
       console.log("Empty!");
-      input.after(newNode);
+      focusButton.parentNode.insertBefore(newNode, focusButton.nextSibling);
       input.setAttribute("aria-invalid", "true");
       input.setAttribute("aria-describedby", "error-msg-5");
       input.classList.add("ds-c-field--error");
