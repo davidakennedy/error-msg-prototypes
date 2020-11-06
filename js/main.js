@@ -13,7 +13,7 @@
 
     if (input.value.trim() == "") {
       console.log("Empty!");
-      focusButton.parentNode.insertBefore(newNode, focusButton.nextSibling);
+      focusButton.parentNode.insertBefore(newNode, focusButton);
       input.setAttribute("aria-invalid", "true");
       input.setAttribute("aria-describedby", "error-msg-5");
       input.classList.add("ds-c-field--error");
