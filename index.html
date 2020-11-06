@@ -18,11 +18,11 @@
     </style>
   </head>
 
-  <body class="js-toc-content">
+  <body>
     <main>
       <div class="example--wrapper ds-base">
         <h1>Inline error message placement prototypes</h1>
-        <div class="js-toc"></div>
+        <div></div>
         <p>
           These prototypes will be
           <a href="https://github.com/CMSgov/design-system/issues/752"
@@ -571,6 +571,7 @@
               >Related independent testing</a
             >.
           </p>
+          <p>Announces: Error field, and one more item, edit text</p>
           <p>
             <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint
             text, text edit, type in text
@@ -687,36 +688,58 @@
             <strong>VoiceOver + Safari</strong>: Announces: Error field and one
             more item, Invalid data, edit text
           </p>
-          <p>When error is triggered, the full error message is announced because focus shifts to it.</p>
           <p>
-            <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint text, edit
+            When error is triggered, the full error message is announced because
+            focus shifts to it.
           </p>
-          <p>When error is triggered, the full error message is announced because focus shifts to it. Also, announces the alert role.</p>
           <p>
+            <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint
+            text, edit
+          </p>
+          <p>
+            When error is triggered, the full error message is announced because
+            focus shifts to it. Also, announces the alert role.
+          </p>
+          <p></p>
           <p>
             <strong>JAWS + IE 11</strong>: Announces: Error field, Helpful hint
             text, Example error message, invalid entry, text edit, type in text
           </p>
-          <p>When error is triggered, the full error message is announced because focus shifts to it. It announces twice, likely because of the alert role and <code>aria-describedby</code>.</p>
           <p>
-            <strong>JAWS + Chrome</strong>: Announces: Error field, Helpful hint text, Edit, Invalid entry, type in text
+            When error is triggered, the full error message is announced because
+            focus shifts to it. It announces twice, likely because of the alert
+            role and <code>aria-describedby</code>.
+          </p>
+          <p>
+            <strong>JAWS + Chrome</strong>: Announces: Error field, Helpful hint
+            text, Edit, Invalid entry, type in text
           </p>
           <p>
             <strong>NVDA + Firefox</strong>: Announces: Error field, Helpful
-            hint text, edit, Example error message, Has invalid entry, Error message, blank
+            hint text, edit, Example error message, Has invalid entry, Error
+            message, blank
           </p>
           <p>
-            <strong>Narrator + Edge</strong>: Announces: Error field, Helpful hint text, Invalid
+            <strong>Narrator + Edge</strong>: Announces: Error field, Helpful
+            hint text, Invalid
           </p>
-          <p>When error is triggered, it announces Alert, Example error message</p>
           <p>
-            <strong>VoiceOver iOS + Safari</strong>: Announces: Error field, helpful hint text, text field, invalid data
+            When error is triggered, it announces Alert, Example error message
+          </p>
+          <p>
+            <strong>VoiceOver iOS + Safari</strong>: Announces: Error field,
+            helpful hint text, text field, invalid data
           </p>
           <p>When error is triggered, it announces Example error message</p>
           <p>
-            <strong>Talkback Android + Chrome</strong>: Announces: Error, invalid entry, Error field, helpful hint text, example error message
+            <strong>Talkback Android + Chrome</strong>: Announces: Error,
+            invalid entry, Error field, helpful hint text, example error message
           </p>
-          <p>When error is triggered, it announces, Example error message, Alert, Example error message. Error announced twice, likely because of the alert role and <code>aria-describedby</code>.</p>
+          <p>
+            When error is triggered, it announces, Example error message, Alert,
+            Example error message. Error announced twice, likely because of the
+            alert role and <code>aria-describedby</code>.
+          </p>
         </details>
         <div>
           <form id="focus-shift" action="/">
