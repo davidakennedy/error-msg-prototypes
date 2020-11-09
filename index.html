@@ -11,9 +11,19 @@
         max-width: 700px;
         padding: 16px;
       }
+
       .ds-base--inverse {
         margin-top: 16px;
         padding: 0 16px 16px;
+      }
+
+      #with-icon #error-msg-7 {
+        background-image: url(images/error.svg);
+        background-position: -8px 0;
+        background-repeat: no-repeat;
+        background-size: 40px;
+        min-height: 25px;
+        padding-left: 32px;
       }
     </style>
   </head>
@@ -755,6 +765,176 @@
             />
             <button
               id="focus-button"
+              type="submit"
+              class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <h3 id="option5">Option 5</h3>
+        <p>
+          This option is interactive. To display it fully, click the "Submit"
+          button without inserting anything in the field. It includes:
+        </p>
+        <ul>
+          <li>
+            <code>aria-invalid</code> added to the input after an error is
+            present.
+          </li>
+          <li>Includes <code>role="alert"</code> on the error message.</li>
+          <li>
+            Uses <code>aria-describedby</code> on the input to associate it to
+            the error message.
+          </li>
+        </ul>
+        <p>
+          These are added to see how they work together, or not, with assistive
+          technology.
+        </p>
+        <details>
+          <summary>Testing notes</summary>
+          <p>
+            <strong>VoiceOver + Safari</strong>: If a
+            <code>role="alert"</code> is on an element that has text also used
+            as text for <code>aria-describedby</code>, VoiceOver will not
+            announce the aria-describedby text.
+            <a
+              ref="https://a11ysupport.io/tests/tech__aria__aria_describedby_with_role_alert"
+              >Related independent testing</a
+            >.
+          </p>
+          <p>Announces: Error field, and one more item, edit text</p>
+          <p>
+            <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint
+            text, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + IE 11</strong>: Announces: Error field, Helpful hint
+            text, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + Chrome</strong>: Announces: Error field, Helpful hint
+            text, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>NVDA + Firefox</strong>: Announces: Error field, Helpful
+            hint text, edit, Example error message, blank
+          </p>
+          <p>
+            <strong>Narrator + Edge</strong>: Announces: Error field, Helpful
+            hint text, edit
+          </p>
+          <p>
+            <strong>VoiceOver iOS + Safari</strong>: Announces: Error field,
+            Helpful hint text, text field
+          </p>
+          <p>
+            <strong>Talkback Android + Chrome</strong>: Announces: Edit box,
+            Error field, helpful hint text, Example error message
+          </p>
+        </details>
+        <div>
+          <form id="no-focus-shift" action="/">
+            <label class="ds-c-label" for="input-error-6">
+              <span>Error field</span>
+              <span class="ds-c-field__hint">Helpful hint text</span>
+            </label>
+            <input
+              class="ds-c-field"
+              id="input-error-6"
+              name="error"
+              type="text"
+            />
+            <button
+              id="no-focus-shift-button"
+              type="submit"
+              class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <h3 id="option6">Option 6</h3>
+        <p>
+          This option is interactive. To display it fully, click the "Submit"
+          button without inserting anything in the field. It includes:
+        </p>
+        <ul>
+          <li>
+            <code>aria-invalid</code> added to the input after an error is
+            present.
+          </li>
+          <li>Includes <code>role="alert"</code> on the error message.</li>
+          <li>
+            Uses <code>aria-describedby</code> on the input to associate it to
+            the error message.
+          </li>
+          <li>
+            Adds a visual icon next to the error message to help the message not
+            rely on color alone
+          </li>
+        </ul>
+        <p>
+          These are added to see how they work together, or not, with assistive
+          technology.
+        </p>
+        <details>
+          <summary>Testing notes</summary>
+          <p>
+            <strong>VoiceOver + Safari</strong>: If a
+            <code>role="alert"</code> is on an element that has text also used
+            as text for <code>aria-describedby</code>, VoiceOver will not
+            announce the aria-describedby text.
+            <a
+              ref="https://a11ysupport.io/tests/tech__aria__aria_describedby_with_role_alert"
+              >Related independent testing</a
+            >.
+          </p>
+          <p>Announces: Error field, and one more item, edit text</p>
+          <p>
+            <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint
+            text, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + IE 11</strong>: Announces: Error field, Helpful hint
+            text, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + Chrome</strong>: Announces: Error field, Helpful hint
+            text, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>NVDA + Firefox</strong>: Announces: Error field, Helpful
+            hint text, edit, Example error message, blank
+          </p>
+          <p>
+            <strong>Narrator + Edge</strong>: Announces: Error field, Helpful
+            hint text, edit
+          </p>
+          <p>
+            <strong>VoiceOver iOS + Safari</strong>: Announces: Error field,
+            Helpful hint text, text field
+          </p>
+          <p>
+            <strong>Talkback Android + Chrome</strong>: Announces: Edit box,
+            Error field, helpful hint text, Example error message
+          </p>
+        </details>
+        <div>
+          <form id="with-icon" action="/">
+            <label class="ds-c-label" for="input-error-7">
+              <span>Error field</span>
+              <span class="ds-c-field__hint">Helpful hint text</span>
+            </label>
+            <input
+              class="ds-c-field"
+              id="input-error-7"
+              name="error"
+              type="text"
+            />
+            <button
+              id="with-icon-button"
               type="submit"
               class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
             >

@@ -1,3 +1,4 @@
+// Example 4
 (function () {
   var form = document.getElementById("focus-shift");
   var input = document.getElementById("input-error-5");
@@ -19,6 +20,54 @@
       input.classList.add("ds-c-field--error");
       newNode.setAttribute("tabindex", "-1");
       newNode.focus();
+    }
+  });
+})();
+
+// Example 5
+(function () {
+  var form = document.getElementById("no-focus-shift");
+  var input = document.getElementById("input-error-6");
+  var focusButton = document.getElementById("no-focus-shift-button");
+  var newNode = document.createElement("div");
+  newNode.setAttribute("id", "error-msg-6");
+  newNode.setAttribute("class", "ds-c-field__hint");
+  newNode.setAttribute("class", "ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (input.value.trim() == "") {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      input.setAttribute("aria-invalid", "true");
+      input.setAttribute("aria-describedby", "error-msg-6");
+      input.classList.add("ds-c-field--error");
+    }
+  });
+})();
+
+// Example 6
+(function () {
+  var form = document.getElementById("with-icon");
+  var input = document.getElementById("input-error-7");
+  var focusButton = document.getElementById("with-icon-button");
+  var newNode = document.createElement("div");
+  newNode.setAttribute("id", "error-msg-7");
+  newNode.setAttribute("class", "ds-c-field__hint");
+  newNode.setAttribute("class", "ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (input.value.trim() == "") {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      input.setAttribute("aria-invalid", "true");
+      input.setAttribute("aria-describedby", "error-msg-7");
+      input.classList.add("ds-c-field--error");
     }
   });
 })();
