@@ -31,6 +31,14 @@
         margin-left: -8px;
         vertical-align: middle;
       }
+
+      #error-msg-9 img {
+        display: inline-block;
+        height: 40px;
+        margin-left: -8px;
+        vertical-align: middle;
+        width: 40px;
+      }
     </style>
   </head>
 
@@ -841,6 +849,9 @@
             Helpful hint text, text field, Invalid data
           </p>
           <p>
+            When error is triggered, it announces: Example error message
+          </p>
+          <p>
             <strong>Talkback Android + Chrome</strong>: Announces: Error,
             invalid entry, Error field, helpful hint text, example error message
           </p>
@@ -931,6 +942,9 @@
           <p>
             <strong>VoiceOver iOS + Safari</strong>: Announces: Error field,
             Helpful hint text, text field, Invalid data
+          </p>
+          <p>
+            When error is triggered, it announces: Example error message
           </p>
           <p>
             <strong>Talkback Android + Chrome</strong>: Announces: Error,
@@ -1024,6 +1038,9 @@
             Helpful hint text, text field, Invalid data
           </p>
           <p>
+            When error is triggered, it announces: Error, Example error message
+          </p>
+          <p>
             <strong>Talkback Android + Chrome</strong>: Announces: Error,
             invalid entry, Error field, helpful hint text, example error message
           </p>
@@ -1042,6 +1059,101 @@
             />
             <button
               id="with-icon-markup-button"
+              type="submit"
+              class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <h3 id="option7">Option 8</h3>
+        <p>
+          This option is interactive. To display it fully, click the "Submit"
+          button without inserting anything in the field. It includes:
+        </p>
+        <ul>
+          <li>
+            <code>aria-invalid</code> added to the input after an error is
+            present.
+          </li>
+          <li>Includes <code>role="alert"</code> on the error message.</li>
+          <li>
+            Uses <code>aria-describedby</code> on the input to associate it to
+            the error message.
+          </li>
+          <li>
+            Adds a visual icon next to the error message (via HTML + img tag) to help the message not rely on color alone. 
+          </li>
+        </ul>
+        <p>
+          These are added to see how they work together, or not, with assistive
+          technology.
+        </p>
+        <details>
+          <summary>Testing notes</summary>
+          <p>
+            <strong>VoiceOver + Safari</strong>: If a
+            <code>role="alert"</code> is on an element that has text also used
+            as text for <code>aria-describedby</code>, VoiceOver will not
+            announce the aria-describedby text.
+            <a
+              ref="https://a11ysupport.io/tests/tech__aria__aria_describedby_with_role_alert"
+              >Related independent testing</a
+            >.
+          </p>
+          <p>
+            Announces: Error field, and one more item, Invalid data, edit text
+          </p>
+          <p>
+            When error is triggered, it announces: Example error message
+          </p>
+          <p>
+            <strong>JAWS + Edge</strong>: Announces: Error field, Helpful hint
+            text, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + IE 11</strong>: Announces: Error field, Helpful hint
+            text, Invalid entry, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>JAWS + Chrome</strong>: Announces: Error field, Helpful hint
+            text, Invalid entry, Example error message, text edit, type in text
+          </p>
+          <p>
+            <strong>NVDA + Firefox</strong>: Announces: Error field, Helpful
+            hint text, edit, Invalid entry, Example error message, blank
+          </p>
+          <p>
+            <strong>Narrator + Edge</strong>: Announces: Error field, Helpful
+            hint text, edit, Invalid
+          </p>
+          <p>
+            <strong>VoiceOver iOS + Safari</strong>: Announces: Error field,
+            Helpful hint text, text field, Invalid data
+          </p>
+          <p>
+            When error is triggered, it announces: Example error message
+          </p>
+          <p>
+            <strong>Talkback Android + Chrome</strong>: Announces: Error,
+            invalid entry, Error field, helpful hint text, example error message
+          </p>
+        </details>
+        <div>
+          <form id="with-icon-img" action="/">
+            <label class="ds-c-label" for="input-error-9">
+              <span>Error field</span>
+              <span class="ds-c-field__hint">Helpful hint text</span>
+            </label>
+            <input
+              class="ds-c-field"
+              id="input-error-9"
+              name="error"
+              type="text"
+            />
+            <button
+              id="with-icon-img-button"
               type="submit"
               class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
             >

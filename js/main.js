@@ -95,7 +95,35 @@
       newNode.prepend(icon);
       icon.innerHTML = svg;
       input.setAttribute("aria-invalid", "true");
-      input.setAttribute("aria-describedby", "error-msg-7");
+      input.setAttribute("aria-describedby", "error-msg-8");
+      input.classList.add("ds-c-field--error");
+    }
+  });
+})();
+
+// Example 8
+(function () {
+  var form = document.getElementById("with-icon-img");
+  var input = document.getElementById("input-error-9");
+  var focusButton = document.getElementById("with-icon-img-button");
+  var newNode = document.createElement("div");
+  var img = document.createElement("img");
+  newNode.setAttribute("id", "error-msg-9");
+  newNode.setAttribute("class", "ds-c-field__hint");
+  newNode.setAttribute("class", "ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  img.setAttribute("src", "/images/error.svg");
+  img.setAttribute("alt", "Error");
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (input.value.trim() == "") {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      newNode.prepend(img);
+      input.setAttribute("aria-invalid", "true");
+      input.setAttribute("aria-describedby", "error-msg-9");
       input.classList.add("ds-c-field--error");
     }
   });
