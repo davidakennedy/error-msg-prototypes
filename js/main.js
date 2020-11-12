@@ -113,7 +113,7 @@
   newNode.setAttribute("class", "ds-u-color--error");
   newNode.setAttribute("role", "alert");
   newNode.textContent = "Example error message";
-  img.setAttribute("src", "../images/error.svg");
+  img.setAttribute("src", "./images/error.svg");
   img.setAttribute("alt", "Error");
   form.addEventListener("submit", function (evt) {
     evt.preventDefault();
