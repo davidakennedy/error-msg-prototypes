@@ -92,7 +92,7 @@
     if (input.value.trim() == "") {
       console.log("Empty!");
       focusButton.parentNode.insertBefore(newNode, focusButton);
-      newNode.prepend(icon);
+      newNode.insertBefore(icon, newNode.firstChild);
       icon.innerHTML = svg;
       input.setAttribute("aria-invalid", "true");
       input.setAttribute("aria-describedby", "error-msg-8");
@@ -121,7 +121,7 @@
     if (input.value.trim() == "") {
       console.log("Empty!");
       focusButton.parentNode.insertBefore(newNode, focusButton);
-      newNode.prepend(img);
+      newNode.insertBefore(img, newNode.firstChild);
       input.setAttribute("aria-invalid", "true");
       input.setAttribute("aria-describedby", "error-msg-9");
       input.classList.add("ds-c-field--error");
