@@ -17,7 +17,8 @@
         padding: 0 16px 16px;
       }
 
-      #error-msg-7 {
+      #error-msg-7,
+      #error-msg-10 {
         background-image: url(images/error.svg);
         background-position: -8px 0;
         background-repeat: no-repeat;
@@ -38,6 +39,15 @@
         margin-left: -8px;
         vertical-align: middle;
         width: 40px;
+      }
+
+      #css-w-flex label {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #error-msg-10 {
+        order: 3;
       }
     </style>
   </head>
@@ -1120,7 +1130,6 @@
             </button>
           </form>
         </div>
-
         <h3 id="option8">Option 8</h3>
         <p>
           This option is interactive. To display it fully, click the "Submit"
@@ -1226,6 +1235,60 @@
             />
             <button
               id="with-icon-img-button"
+              type="submit"
+              class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <h3 id="option9">Option 9</h3>
+        <p>
+          This option is interactive. To display it fully, click the "Submit"
+          button without inserting anything in the field. It includes:
+        </p>
+        <ul>
+          <li>
+            <code>aria-invalid</code> added to the input after an error is
+            present.
+          </li>
+          <li>Includes <code>role="alert"</code> on the error message.</li>
+          <li>
+            Uses <code>aria-describedby</code> on the input to associate it to
+            the error message.
+          </li>
+          <li>
+            Adds a visual icon next to the error message (via CSS) to help the message not rely on color alone. 
+          </li>
+          <li>
+            Places the error message in the label, where it exists currently, but reorders it to below the input via Flexbox. To accomplish this, the input was also moved inside the label. This could also be accomplished with other HTML structures. 
+          </li>
+        </ul>
+        <p>
+          These are added to see how they work together, or not, with assistive
+          technology.
+        </p>
+        <details>
+          <summary>Testing notes</summary>
+          <p>In doing some preliminary testing on this with the keyboard and screen reader, I wouldn't go this route. It's too easy to break WCAG guidance because the meaningful sequence or focus order can become illogical, especially if the error message contains links, buttons or other interactive elements.</p>
+          <p>
+            For more on this, see <a href="https://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html">HTML Source Order vs CSS Display Order</a> and <a href="https://www.w3.org/TR/WCAG20-TECHS/C27.html">relevant WCAG guidance</a>.
+          </p>
+        </details>
+        <div>
+          <form id="css-w-flex" action="/">
+            <label class="ds-c-label" for="input-error-10">
+              <span>Error field</span>
+              <span class="ds-c-field__hint">Helpful hint text</span>
+              <input
+                class="ds-c-field"
+                id="input-error-10"
+                name="error"
+                type="text"
+              />
+            </label>
+            <button
+              id="css-w-flex-button"
               type="submit"
               class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
             >
