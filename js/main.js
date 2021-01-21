@@ -154,3 +154,37 @@
     }
   });
 })();
+
+// Example 10
+(function () {
+  var form = document.getElementById("choice-w-fs-on-legend");
+  var fs = document.getElementById("fs-choice-w-fs-on-legend");
+  var legend = document.getElementById("legend-choice-w-fs-on-legend");
+  var focusButton = document.getElementById("choice-w-fs-on-legend-button");
+  var newNode = document.createElement("div");
+  newNode.setAttribute("id", "error-msg-11");
+  newNode.classList.add("ds-c-field__hint");
+  newNode.classList.add("ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  var isSelected = function () {
+    var radioObj = form.querySelectorAll("[name='checkbox-choices']");
+    console.log(radioObj);
+    for (var i = 0; i < radioObj.length; i++) {
+      if (radioObj[i].checked) {
+        return true;
+      }
+    }
+    return false;
+  };
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (!isSelected()) {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      legend.setAttribute("aria-describedby", "error-msg-11");
+      input.classList.add("ds-c-field--error");
+    }
+  });
+})();
