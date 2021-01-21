@@ -19,7 +19,8 @@
 
       #error-msg-7,
       #error-msg-10,
-      #error-msg-11 {
+      #error-msg-11,
+      #error-msg-12 {
         background-image: url(images/error.svg);
         background-position: -8px 0;
         background-repeat: no-repeat;
@@ -49,6 +50,10 @@
 
       #error-msg-10 {
         order: 3;
+      }
+
+      .ds-c-choice.ds-c-field--error:not(:disabled)+label:before {
+        border-color: #e31c3d;
       }
     </style>
   </head>
@@ -1414,6 +1419,130 @@
             </fieldset>
             <button
               id="choice-w-fs-on-legend-button"
+              type="submit"
+              class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <h3 id="option11">Option 11</h3>
+        <p>
+          This option is interactive. To display it fully, click the "Submit"
+          button without inserting anything in the field. It includes:
+        </p>
+        <ul>
+          <li>
+            Does not add <code>aria-invalid</code> because they are potentially multiple inputs with issues.
+          </li>
+          <li>Includes <code>role="alert"</code> on the error message.</li>
+          <li>
+            Uses <code>aria-label</code> on the <code>legend</code> to override its visual label with the legend name <em>and</em> error message.
+          </li>
+          <li>
+            Adds a visual icon next to the error message (via CSS) to help the message not rely on color alone. 
+          </li>
+        </ul>
+        <p>
+          These are added to see how they work together, or not, with assistive
+          technology.
+        </p>
+        <details>
+          <summary>Testing notes</summary>
+          <p>Associating error messages that reside outside of a legend can prove challenging.</p>
+          <p>
+            For more on this, see <a href="https://blog.tenon.io/accessible-validation-of-checkbox-and-radiobutton-groups">Accessible validation of checkbox and radiobutton groups</a>.
+          </p>
+          <Announces:>
+            <strong>VoiceOver + Safari</strong>: Visual legend and label are read, but not <code>aria-label</code>.
+          </p>
+          <p>
+            When error is triggered, it announces: Example error message
+          </p>
+          <p>
+            <strong>JAWS + Edge</strong>: Visual legend and label are read, but not <code>aria-label</code>. 
+          </p>
+          <p>
+            When error is triggered, it announces: Alert, Example error message.
+          </p>
+          <p>
+            <strong>JAWS + IE 11</strong>: Visual legend and label are read, but not <code>aria-label</code>.
+          </p>
+          <p>
+            When error is triggered, it announces: Alert, Example error message.
+          </p>
+          <p>
+            <strong>JAWS + Chrome</strong>: Not tested.
+          </p>
+          <p>
+            When error is triggered, it announces: Not tested.
+          </p>
+          <p>
+            <strong>NVDA + Firefox</strong>: Visual legend and label are read, but not <code>aria-label</code>.
+          </p>
+          <p>
+            When error is triggered, it announces: Alert, Example error message.
+          </p>
+          <p>
+            <strong>Narrator + Edge</strong>: Not tested.
+          </p>
+          <p>
+            When error is triggered, it announces: Not tested.
+          </p>
+          <p>
+            <strong>VoiceOver iOS + Safari</strong>: Not tested.
+          </p>
+          <p>
+            When error is triggered, it announces: Not tested.
+          </p>
+          <p>
+            <strong>Talkback Android + Chrome</strong>: Not tested.
+          </p>
+          <p>
+            When error is triggered, it announces: Not tested.
+          </p>
+        </details>
+        <div>
+          <form id="choice-w-legend-aria" action="/">
+            <fieldset id="fs-choice-w-legend-aria" class="ds-c-fieldset">
+              <legend id="legend-choice-w-legend-aria" class="ds-c-label"><span>Checkbox example</span></legend>
+              <span class="ds-c-field__hint">Helpful hint text</span>
+              <input
+                class="ds-c-choice"
+                id="checkbox-7"
+                type="checkbox"
+                name="checkbox-choices"
+                value="checkbox-7"
+                checked
+              />
+              <label for="checkbox-7">
+                <span>Choice 1</span>
+              </label>
+              <input
+                class="ds-c-choice"
+                id="checkbox8"
+                type="checkbox"
+                name="checkbox-choices"
+                value="checkbox-8"
+              />
+              <label for="checkbox-8">
+                <span>Choice 2</span>
+              </label>
+              <input
+                class="ds-c-choice"
+                id="checkbox-9"
+                type="checkbox"
+                name="checkbox-choices"
+                value="checkbox-9"
+                disabled
+              />
+              <label for="checkbox-9">
+                <span>Disabled choice 3</span>
+              </label>
+            </fieldset>
+            <button
+              id="choice-w-legend-aria-button"
               type="submit"
               class="ds-c-button ds-c-button--primary ds-u-margin-top--2"
             >

@@ -173,6 +173,8 @@
     for (var i = 0; i < radioObj.length; i++) {
       if (radioObj[i].checked) {
         return true;
+      } else {
+        radioObj[i].classList.add("ds-c-field--error");
       }
     }
     return false;
@@ -184,7 +186,46 @@
       console.log("Empty!");
       focusButton.parentNode.insertBefore(newNode, focusButton);
       legend.setAttribute("aria-describedby", "error-msg-11");
-      input.classList.add("ds-c-field--error");
+    }
+  });
+})();
+
+// Example 11
+(function () {
+  var form = document.getElementById("choice-w-legend-aria");
+  var fs = document.getElementById("fs-choice-w-legend-aria");
+  var legend = document.getElementById("legend-choice-w-legend-aria");
+  var focusButton = document.getElementById("choice-w-legend-aria-button");
+  var newNode = document.createElement("div");
+  newNode.setAttribute("id", "error-msg-12");
+  newNode.classList.add("ds-c-field__hint");
+  newNode.classList.add("ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  var isSelected = function () {
+    var radioObj = form.querySelectorAll("[name='checkbox-choices']");
+    console.log(radioObj);
+    for (var i = 0; i < radioObj.length; i++) {
+      if (radioObj[i].checked) {
+        return true;
+      } else {
+        radioObj[i].classList.add("ds-c-field--error");
+      }
+    }
+    return false;
+  };
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (!isSelected()) {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      legend.setAttribute(
+        "aria-label",
+        "Checkbox example, Example error message"
+      );
+    } else {
+      legend.removeAttribute("aria-label");
     }
   });
 })();
