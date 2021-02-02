@@ -269,3 +269,47 @@
     }
   });
 })();
+
+// Example 13
+(function () {
+  var form = document.getElementById("choice-w-invalid");
+  var fs = document.getElementById("fs-choice-w-invalid");
+  var legend = document.getElementById("legend-choice-w-invalid");
+  var focusButton = document.getElementById("choice-w-invalid-button");
+  var newNode = document.createElement("div");
+  newNode.setAttribute("id", "error-msg-12");
+  newNode.classList.add("ds-c-field__hint");
+  newNode.classList.add("ds-u-color--error");
+  newNode.setAttribute("role", "alert");
+  newNode.textContent = "Example error message";
+  var newNodeSpan = document.createElement("span");
+  newNodeSpan.classList.add("ds-u-visibility--screen-reader");
+  newNodeSpan.textContent = "Example error message";
+  var isSelected = function () {
+    var radioObj = form.querySelectorAll("[name='checkbox-choices']");
+    console.log(radioObj);
+    for (var i = 0; i < radioObj.length; i++) {
+      if (radioObj[i].checked) {
+        return true;
+      } else {
+        radioObj[i].classList.add("ds-c-field--error");
+      }
+    }
+    return false;
+  };
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    if (!isSelected()) {
+      console.log("Empty!");
+      focusButton.parentNode.insertBefore(newNode, focusButton);
+      legend.appendChild(newNodeSpan);
+      fs.setAttribute("aria-invalid", "true");
+    } else {
+      if (legend.contains(newNodeSpan)) {
+        legend.removeChild(newNodeSpan);
+        fs.removeAttribute("aria-invalid");
+      }
+    }
+  });
+})();
